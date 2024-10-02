@@ -5,20 +5,32 @@ body{
   padding-bottom: 50px;
 }
 .main-container{
+  display: grid;
+  place-content: center;
   margin-top: 200px;
   max-width: fit-content;
   
   
+  
+}
+
+.next-button-container{
+  display: grid;
+  place-content: center;
 }
 
 .next-button{
+  
   margin-top: 30px;
   border: none;
   background-color: #412508;
   color: white;
   padding: 6px 15px 6px 15px;
   border-radius: 20px;
+  max-width: 70px;
+  max-height: 50px;
   cursor: pointer;
+
 }
 .next-button:hover{
   

@@ -2,16 +2,16 @@ import { Mcqs } from "../data/questions.js";
 
 let html = '';
 let counter = 1;
-renderQuestions(counter);
+renderQuestions(counter); //at first id 1
 function renderQuestions(id){
 
   
-console.log('questions page')
 
 Mcqs.forEach((mcq)=>{
-  const Qno = mcq.id;
+  const Qno = mcq.id; 
+  
 
-  if(Qno === counter){
+  if(Qno === id){
 
     const options = mcq.options;
     html = `
@@ -20,15 +20,13 @@ Mcqs.forEach((mcq)=>{
         </div>
         <div class="spacer"></div>
         ${renderOptions(options)}
-        
-        `;
-  }
-  
-  
-});
+         `;
+        }
+    });
+document.querySelector('.js-mcq-container').innerHTML = html;
 }
 
-document.querySelector('.js-mcq-container').innerHTML = html;
+
 
 
 function renderOptions(options){
@@ -71,5 +69,15 @@ document.querySelectorAll('.js-mcq-option')
 
 const nextButton = document.querySelector('.js-next-button');
 nextButton.addEventListener('click' , ()=>{
+  if(counter>=1 && counter<10 ){
+    counter++;
+    //console.log(counter);
+    renderQuestions(counter);
+  }
 
-})
+    
+  
+  
+
+
+});
