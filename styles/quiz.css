@@ -1,0 +1,42 @@
+body{
+  display: grid;
+  place-content: center;
+  height: auto;
+  padding-bottom: 50px;
+}
+.main-container{
+  margin-top: 200px;
+  max-width: fit-content;
+  
+  
+}
+
+.next-button{
+  margin-top: 30px;
+  border: none;
+  background-color: #412508;
+  color: white;
+  padding: 6px 15px 6px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.next-button:hover{
+  
+  background-color: #c49665;
+  padding: 8px 20px 8px 20px;
+
+  
+ 
+}
+
+.spacer{
+  margin-bottom: 50px;
+}
+.option-spacer{
+  margin-bottom: 10px;
+}
+
+.mcq-option{
+  border: 1px solid  #412508;
+  cursor: pointer;
+}
