@@ -39,14 +39,6 @@ body{
   cursor: pointer;
 
 }
-.next-button:hover{
-  
-  
-  padding: 8px 20px 8px 20px;
-
-  
- 
-}
 
 .spacer{
   margin-bottom: 50px;
@@ -63,4 +55,12 @@ body{
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
+}
+
+.right-answer{
+  background-color: lightgreen;
+}
+
+.wrong-answer{
+  background-color: rgb(221, 89, 89);
 }

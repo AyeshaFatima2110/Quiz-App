@@ -2,10 +2,12 @@ import { Mcqs } from "../data/questions.js";
 
 let score = 0;
 let counter = 1;
+let currentMcq = '';
+
 renderQuestions(counter); //at first id 1
 
 function renderQuestions(id){
-  let currentMcq = '';
+  
   let html = '';
   Mcqs.forEach((mcq)=>{
     
@@ -56,13 +58,17 @@ function renderOptions(options){
 function attachOptionListener(){
   document.querySelectorAll('.js-mcq-option')
           .forEach(element =>{
-            element.addEventListener('click', (event)=>{
-              const getAnswer = event.target.innerText; // get the html of the targeted or clicked option
-              console.log(getAnswer);
-              checkAnswer(getAnswer);
-
-            });
+            element.addEventListener('click',handleOptionEvent);
   });
+}
+
+function handleOptionEvent(event){
+
+  const selectedOption = event.target;
+  const getAnswer = selectedOption.innerText; // get the html of the targeted or clicked option
+  console.log(getAnswer);
+  const result = checkAnswer(getAnswer);
+  showResult(selectedOption ,result);
 }
 
 
@@ -82,27 +88,39 @@ nextButton.addEventListener('click' , ()=>{
 
 
 function checkAnswer(answer){
-  let currentMcq = '';
-  Mcqs.forEach(mcq=>{
-    if(counter===mcq.id){
-      currentMcq = mcq;
-    }
-    });
-
-    if(currentMcq.answer === answer){
+  let result = '';
+  if(currentMcq.answer === answer){
       score++;
       console.log('correct');
       console.log(score);
+      result = true;
       
     }
-    else{
+  else{
       console.log('wrong');
+      result = false;
     }
+
+  return result;
      
   }
 
  // console.log(typeof[]); // why object
+function showResult(selectedOption,result){
+  const optionsElement = document.querySelectorAll('.js-mcq-option');
 
+  if(result){
+    selectedOption.classList.add('right-answer');
+   }
+  else{
+    selectedOption.classList.add('wrong-answer');
+    }
+ 
+  optionsElement.forEach(element=>{
+    element.removeEventListener('click',handleOptionEvent);
+  })
+
+}
 
 
 
