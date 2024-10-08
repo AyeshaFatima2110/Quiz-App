@@ -1,0 +1,25 @@
+.main-container{
+  margin-top: 250px;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.score-container{
+  
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  font-size: 25px;
+  color: #3b230b;
+  font-style: oblique;
+  margin-bottom:15px;
+
+}
+.result-container{
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  font-size: 25px;
+  color: #3b230b;
+  font-style: oblique;
+
+}

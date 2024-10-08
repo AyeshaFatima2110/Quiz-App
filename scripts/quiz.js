@@ -1,6 +1,6 @@
 import { Mcqs } from "../data/questions.js";
 
-export let score = 0;
+let score = 0;
 let counter = 1;
 let currentMcq = '';
 
@@ -90,7 +90,7 @@ nextButton.addEventListener('click' , ()=>{
     
     nextButton.classList.add('js-submit-button');
     nextButton.innerHTML = 'submit';
-    nextButton.classList.remove('.js-next-button');
+    nextButton.classList.remove('js-next-button');
     //adding setTimeout for a little delay because were updating the dom so it took a little bit time , and after updating the dom we add the event listener so it will not cause the null proerty error
     setTimeout(()=>{
       const submitButton = document.querySelector('.js-submit-button');
@@ -100,7 +100,7 @@ nextButton.addEventListener('click' , ()=>{
         
 
       });
-    },1);
+    },3);
   }
 
 });
